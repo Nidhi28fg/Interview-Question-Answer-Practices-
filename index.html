@@ -54,6 +54,356 @@
         // Quiz questions and their details
         const questions = [
             {
+                question: "What is the default command to start a Next.js development server?",
+                options: [
+                    "npm start",
+                    "next dev",
+                    "npm run dev",
+                    "next start"
+                ],
+                correctAnswerIndex: 2
+            },
+            {
+                question: "Which company created Next.js?",
+                options: [
+                    "Facebook",
+                    "Google",
+                    "Vercel",
+                    "Microsoft"
+                ],
+                correctAnswerIndex: 2
+            },
+            {
+                question: "Which rendering method is best for frequently changing content?",
+                options: [
+                    "Static Generation",
+                    "Server-Side Rendering",
+                    "Client-Side Rendering",
+                    "Incremental Static Regeneration"
+                ],
+                correctAnswerIndex: 1
+            },
+            {
+                question: "Which hook is used for programmatic navigation in Next.js?",
+                options: [
+                    "useNavigate",
+                    "useHistory",
+                    "useRouter",
+                    "useLink"
+                ],
+                correctAnswerIndex: 2
+            },
+            {
+                question: "What does the next export command do?",
+                options: [
+                    "Builds a server-rendered app",
+                    "Exports a static site",
+                    "Deploys to Vercel",
+                    "Optimizes images"
+                ],
+                correctAnswerIndex: 1
+            },
+            {
+                question: "Which directory is used for API routes in Next.js?",
+                options: [
+                    "api/",
+                    "routes/",
+                    "pages/api/",
+                    "server/"
+                ],
+                correctAnswerIndex: 2
+            },
+            {
+                question: "Which method is used to fetch data at build time?",
+                options: [
+                    "getServerSideProps",
+                    "getInitialProps",
+                    "getStaticProps",
+                    "getClientProps"
+                ],
+                correctAnswerIndex: 2
+            },
+            {
+                question: "Which method is used to fetch data on every request?",
+                options: [
+                    "getStaticProps",
+                    "getServerSideProps",
+                    "getInitialProps",
+                    "getClientProps"
+                ],
+                correctAnswerIndex: 1
+            },
+            {
+                question: "Which component is used to add metadata to a Next.js page?",
+                options: [
+                    "Meta",
+                    "Head",
+                    "Helmet",
+                    "Header"
+                ],
+                correctAnswerIndex: 1
+            },
+            {
+                question: "Which feature allows automatic code splitting in Next.js?",
+                options: [
+                    "Webpack",
+                    "Babel",
+                    "File-based routing",
+                    "Built-in optimization"
+                ],
+                correctAnswerIndex: 3
+            },
+            {
+                question: "Which method is used to define dynamic paths for static generation?",
+                options: [
+                    "getStaticPaths",
+                    "getServerSidePaths",
+                    "getInitialPaths",
+                    "getClientPaths"
+                ],
+                correctAnswerIndex: 0
+            },
+            {
+                question: "Which component is used for optimized image rendering in Next.js?",
+                options: [
+                    "img",
+                    "Image",
+                    "NextImage",
+                    "OptimizedImage"
+                ],
+                correctAnswerIndex: 1
+            },
+            {
+                question: "Which rendering method sends fully rendered HTML to the client?",
+                options: [
+                    "CSR",
+                    "SSR",
+                    "SSG",
+                    "ISR"
+                ],
+                correctAnswerIndex: 1
+            },
+            {
+                question: "Which rendering method sends a blank HTML shell initially?",
+                options: [
+                    "SSR",
+                    "SSG",
+                    "CSR",
+                    "ISR"
+                ],
+                correctAnswerIndex: 2
+            },
+            {
+                question: "Which hook is used to perform side effects in React/Next.js?",
+                options: [
+                    "useEffect",
+                    "useState",
+                    "useMemo",
+                    "useCallback"
+                ],
+                correctAnswerIndex: 0
+            },
+            {
+                question: "Which feature allows you to create serverless functions in Next.js?",
+                options: [
+                    "Middleware",
+                    "API Routes",
+                    "Static Props",
+                    "Dynamic Imports"
+                ],
+                correctAnswerIndex: 1
+            },
+            {
+                question: "Which styling method is scoped to components in Next.js?",
+                options: [
+                    "Global CSS",
+                    "Styled Components",
+                    "Styled JSX",
+                    "Tailwind CSS"
+                ],
+                correctAnswerIndex: 2
+            },
+            {
+                question: "Which rendering method is recommended for performance and efficiency?",
+                options: [
+                    "SSR",
+                    "CSR",
+                    "SSG",
+                    "ISR"
+                ],
+                correctAnswerIndex: 2
+            },
+            {
+                question: "Which method is used for incremental static regeneration?",
+                options: [
+                    "getStaticProps with revalidate",
+                    "getServerSideProps",
+                    "getInitialProps",
+                    "getStaticPaths"
+                ],
+                correctAnswerIndex: 0
+            },
+            {
+                question: "Which hook is used to access query parameters in Next.js?",
+                options: [
+                    "useParams",
+                    "useQuery",
+                    "useRouter",
+                    "useLocation"
+                ],
+                correctAnswerIndex: 2
+            },
+            {
+                question: "Which lifecycle method is deprecated in favor of data-fetching methods?",
+                options: [
+                    "componentDidMount",
+                    "getInitialProps",
+                    "componentWillMount",
+                    "shouldComponentUpdate"
+                ],
+                correctAnswerIndex: 1
+            },
+            {
+                question: "Which method is used to fetch data only on the client side?",
+                options: [
+                    "getStaticProps",
+                    "getServerSideProps",
+                    "useEffect",
+                    "getInitialProps"
+                ],
+                correctAnswerIndex: 2
+            },
+            {
+                question: "Which rendering method is best for real-time data?",
+                options: [
+                    "SSG",
+                    "SSR",
+                    "CSR",
+                    "ISR"
+                ],
+                correctAnswerIndex: 1
+            },
+            {
+                question: "Which method allows you to pass props to a page component?",
+                options: [
+                    "getProps",
+                    "getStaticProps",
+                    "getPageProps",
+                    "getClientProps"
+                ],
+                correctAnswerIndex: 1
+            },
+            {
+                question: "Which hook is used to trigger navigation programmatically?",
+                options: [
+                    "useNavigate",
+                    "useRouter",
+                    "useHistory",
+                    "useLink"
+                ],
+                correctAnswerIndex: 1
+            },
+            {
+                question: "Which Next.js feature allows for dynamic routing?",
+                options: [
+                    "pages/[id].js",
+                    "routes/:id.js",
+                    "dynamicRoutes.js",
+                    "router.js"
+                ],
+                correctAnswerIndex: 0
+            },
+            {
+                question: "Which method is used to fetch data during build time for dynamic routes?",
+                options: [
+                    "getServerSideProps",
+                    "getStaticPaths",
+                    "getInitialProps",
+                    "getClientProps"
+                ],
+                correctAnswerIndex: 1
+            },
+            {
+                question: "Which rendering method is used for static content that rarely changes?",
+                options: [
+                    "SSR",
+                    "CSR",
+                    "SSG",
+                    "ISR"
+                ],
+                correctAnswerIndex: 2
+            },
+            {
+                question: "Which Next.js feature improves SEO by rendering pages on the server?",
+                options: [
+                    "CSR",
+                    "SSG",
+                    "SSR",
+                    "ISR"
+                ],
+                correctAnswerIndex: 2
+            },
+            {
+                question: "Which method is used to fetch data for static generation with dynamic paths?",
+                options: [
+                    "getStaticProps",
+                    "getStaticPaths",
+                    "getServerSideProps",
+                    "getInitialProps"
+                ],
+                correctAnswerIndex: 0
+            },
+            {
+                question: "Which hook is used to access the router object in Next.js?",
+                options: [
+                    "useRouter",
+                    "useRoute",
+                    "useHistory",
+                    "useLocation"
+                ],
+                correctAnswerIndex: 0
+            },
+            {
+                question: "Which rendering method is slower due to on-the-fly data fetching?",
+                options: [
+                    "SSG",
+                    "SSR",
+                    "CSR",
+                    "ISR"
+                ],
+                correctAnswerIndex: 1
+            },
+            {
+                question: "Which rendering method allows caching of static HTML?",
+                options: [
+                    "SSR",
+                    "CSR",
+                    "SSG",
+                    "ISR"
+                ],
+                correctAnswerIndex: 2
+            },
+            {
+                question: "Which method is used to fetch data on every request with context?",
+                options: [
+                    "getStaticProps",
+                    "getServerSideProps",
+                    "getInitialProps",
+                    "getClientProps"
+                ],
+                correctAnswerIndex: 1
+            },
+            {
+                question: "Which hook is used to fetch data after component mounts?",
+                options: [
+                    "useEffect",
+                    "useState",
+                    "useMemo",
+                    "useCallback"
+                ],
+                correctAnswerIndex: 0
+            },
+            {
                 question: "What is Next.js primarily built upon?",
                 options: [
                     "Angular and Babel",
