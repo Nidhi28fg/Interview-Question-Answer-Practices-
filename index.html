@@ -54,6 +54,506 @@
         // Quiz questions and their details
         const questions = [
             {
+        question: "What is reconciliation in React?",
+        options: [
+            "Comparing two databases",
+            "Matching virtual DOM with real DOM",
+            "Merging props and state",
+            "Updating Redux store"
+        ],
+        correctAnswerIndex: 1
+    },
+    {
+        question: "What is lazy loading in React?",
+        options: [
+            "Loading components after user interaction",
+            "Loading components during build time",
+            "Loading all components at once",
+            "Loading components before rendering"
+        ],
+        correctAnswerIndex: 0
+    },
+    {
+        question: "What is hydration in React?",
+        options: [
+            "Adding watermarks to components",
+            "Converting JSX to HTML",
+            "Attaching event listeners to server-rendered markup",
+            "Refreshing the DOM"
+        ],
+        correctAnswerIndex: 2
+    },
+    {
+        question: "What is React.memo used for?",
+        options: [
+            "Memoizing functions",
+            "Preventing unnecessary re-renders",
+            "Storing state",
+            "Creating hooks"
+        ],
+        correctAnswerIndex: 1
+    },
+    {
+        question: "What are error boundaries in React?",
+        options: [
+            "Components that catch JavaScript errors",
+            "Components that prevent rendering",
+            "Components that handle routing",
+            "Components that manage state"
+        ],
+        correctAnswerIndex: 0
+    },
+    {
+        question: "What is a custom hook?",
+        options: [
+            "A built-in React hook",
+            "A reusable function using hooks",
+            "A lifecycle method",
+            "A Redux action"
+        ],
+        correctAnswerIndex: 1
+    },
+    {
+        question: "What does useMemo do?",
+        options: [
+            "Stores mutable values",
+            "Memoizes expensive calculations",
+            "Updates state",
+            "Handles side effects"
+        ],
+        correctAnswerIndex: 1
+    },
+    {
+        question: "What is the difference between useEffect and useLayoutEffect?",
+        options: [
+            "useLayoutEffect runs after paint",
+            "useEffect runs before paint",
+            "useLayoutEffect runs synchronously",
+            "useEffect runs synchronously"
+        ],
+        correctAnswerIndex: 2
+    },
+    {
+        question: "Can hooks be used in class components?",
+        options: [
+            "Yes",
+            "No",
+            "Only with HOCs",
+            "Only with Redux"
+        ],
+        correctAnswerIndex: 1
+    },
+    {
+        question: "Which hook accesses global state via context?",
+        options: [
+            "useState",
+            "useEffect",
+            "useContext",
+            "useRef"
+        ],
+        correctAnswerIndex: 2
+    },
+    {
+        question: "What is react-router-dom used for?",
+        options: [
+            "Styling components",
+            "Managing routes",
+            "Fetching data",
+            "Handling forms"
+        ],
+        correctAnswerIndex: 1
+    },
+    {
+        question: "Which component is used for navigation?",
+        options: [
+            "<Route>",
+            "<Link>",
+            "<Switch>",
+            "<Nav>"
+        ],
+        correctAnswerIndex: 1
+    },
+    {
+        question: "What is a dynamic route?",
+        options: [
+            "A route that changes based on user input",
+            "A route with parameters",
+            "A route with animations",
+            "A route with Redux"
+        ],
+        correctAnswerIndex: 1
+    },
+    {
+        question: "How do you protect routes in React?",
+        options: [
+            "Using useEffect",
+            "Using useState",
+            "Using authentication logic",
+            "Using useRef"
+        ],
+        correctAnswerIndex: 2
+    },
+    {
+        question: "What does <Switch> do in React Router v5?",
+        options: [
+            "Switches between themes",
+            "Renders the first matching route",
+            "Handles form inputs",
+            "Updates state"
+        ],
+        correctAnswerIndex: 1
+    },
+    {
+        question: "What is Redux?",
+        options: [
+            "A styling library",
+            "A state management library",
+            "A routing tool",
+            "A testing framework"
+        ],
+        correctAnswerIndex: 1
+    },
+    {
+        question: "What is an action in Redux?",
+        options: [
+            "A function that updates the DOM",
+            "A plain object describing a change",
+            "A hook",
+            "A reducer"
+        ],
+        correctAnswerIndex: 1
+    },
+    {
+        question: "What is a reducer in Redux?",
+        options: [
+            "A function that returns new state",
+            "A hook",
+            "A component",
+            "A router"
+        ],
+        correctAnswerIndex: 0
+    },
+    {
+        question: "What does useDispatch do?",
+        options: [
+            "Reads state",
+            "Sends actions to the store",
+            "Updates props",
+            "Handles routing"
+        ],
+        correctAnswerIndex: 1
+    },
+    {
+        question: "What is the role of the Redux store?",
+        options: [
+            "Stores components",
+            "Stores styles",
+            "Stores application state",
+            "Stores routes"
+        ],
+        correctAnswerIndex: 2
+    },
+    {
+        question: "What is the difference between SSR and CSR?",
+        options: [
+            "SSR renders on client",
+            "CSR renders on server",
+            "SSR renders on server, CSR on client",
+            "Both render on server"
+        ],
+        correctAnswerIndex: 2
+    },
+    {
+        question: "What are fragments in React?",
+        options: [
+            "Components with styles",
+            "Invisible wrappers",
+            "Hooks",
+            "Props"
+        ],
+        correctAnswerIndex: 1
+    },
+    {
+        question: "What is the purpose of React.StrictMode?",
+        options: [
+            "Adds styles",
+            "Highlights potential problems",
+            "Enables routing",
+            "Manages state"
+        ],
+        correctAnswerIndex: 1
+    },
+    {
+        question: "What is the difference between setState and useState?",
+        options: [
+            "setState is for functional components",
+            "useState is for class components",
+            "setState is for class, useState for functional",
+            "Both are the same"
+        ],
+        correctAnswerIndex: 2
+    },
+    {
+        question: "How do you debug React apps?",
+        options: [
+            "Using Redux",
+            "Using React DevTools",
+            "Using CSS",
+            "Using JSX"
+        ],
+        correctAnswerIndex: 1
+    },
+    {
+        question: "What is JSX compiled into?",
+        options: [
+            "HTML",
+            "CSS",
+            "JavaScript",
+            "XML"
+        ],
+        correctAnswerIndex: 2
+    },
+    {
+        question: "What is the default behavior of useEffect?",
+        options: [
+            "Runs after every render",
+            "Runs before render",
+            "Runs only once",
+            "Runs on unmount"
+        ],
+        correctAnswerIndex: 0
+    },
+    {
+        question: "What is the purpose of useCallback?",
+        options: [
+            "Memoizes a function",
+            "Memoizes a value",
+            "Stores state",
+            "Handles events"
+        ],
+        correctAnswerIndex: 0
+    },
+    {
+        question: "What is the role of componentDidMount?",
+        options: [
+            "Called before render",
+            "Called after component mounts",
+            "Called on error",
+            "Called on unmount"
+        ],
+        correctAnswerIndex: 1
+    },
+    {
+        question: "What is the purpose of shouldComponentUpdate?",
+        options: [
+            "Prevents unnecessary re-renders",
+            "Updates props",
+            "Handles routing",
+            "Adds styles"
+        ],
+        correctAnswerIndex: 0
+    },
+    {
+        question: "What is the use of defaultProps?",
+        options: [
+            "Sets default styles",
+            "Sets default values for props",
+            "Sets default state",
+            "Sets default hooks"
+        ],
+        correctAnswerIndex: 1
+    },
+    {
+        question: "What is the difference between className and class in JSX?",
+        options: [
+            "No difference",
+            "className is used in JSX",
+            "class is used in JSX",
+            "Both are invalid"
+        ],
+        correctAnswerIndex: 1
+    },
+    {
+        question: "What is the purpose of ReactDOM.render()?",
+        options: [
+            "Renders JSX to the DOM",
+            "Renders CSS",
+            "Renders server-side code",
+            "Renders Redux"
+        ],
+        correctAnswerIndex: 0
+    },
+    {
+        question: "What is the role of useEffect(() => {}, [])?",
+        options: [
+            "Runs after every render",
+            "Runs only once",
+            "Runs before render",
+            "Runs on unmount"
+        ],
+        correctAnswerIndex: 1
+    },
+    {
+        question: "What is the purpose of React.createElement()?",
+        options: [
+            "Creates a new hook",
+            "Creates a new DOM element",
+            "Creates a React element",
+            "Creates a Redux action"
+        ],
+        correctAnswerIndex: 2
+    },
+             {
+        question: "What is React?",
+        options: [
+            "A database",
+            "A JavaScript library for building UIs",
+            "A CSS framework",
+            "A backend framework"
+        ],
+        correctAnswerIndex: 1
+    },
+    {
+        question: "What is JSX?",
+        options: [
+            "JavaScript XML",
+            "JSON syntax",
+            "A CSS preprocessor",
+            "A database query language"
+        ],
+        correctAnswerIndex: 0
+    },
+    {
+        question: "Which method is used to create components in React?",
+        options: [
+            "createComponent()",
+            "renderComponent()",
+            "React.Component",
+            "new Component()"
+        ],
+        correctAnswerIndex: 2
+    },
+    {
+        question: "What is the virtual DOM?",
+        options: [
+            "A copy of the real DOM",
+            "A server-side DOM",
+            "A database",
+            "A CSS engine"
+        ],
+        correctAnswerIndex: 0
+    },
+    {
+        question: "How do you pass data to a child component?",
+        options: [
+            "Using state",
+            "Using props",
+            "Using context",
+            "Using Redux"
+        ],
+        correctAnswerIndex: 1
+    },
+    {
+        question: "What is the default data flow in React?",
+        options: [
+            "Two-way",
+            "Circular",
+            "One-way",
+            "Bidirectional"
+        ],
+        correctAnswerIndex: 2
+    },
+    {
+        question: "Which hook is used to manage state in functional components?",
+        options: [
+            "useEffect",
+            "useState",
+            "useContext",
+            "useReducer"
+        ],
+        correctAnswerIndex: 1
+    },
+    {
+        question: "What does export default do in React?",
+        options: [
+            "Imports a module",
+            "Exports multiple components",
+            "Exports a single component",
+            "Deletes a component"
+        ],
+        correctAnswerIndex: 2
+    },
+    {
+        question: "What is a controlled component?",
+        options: [
+            "A component that controls other components",
+            "A component with internal state",
+            "A component whose form data is handled by React",
+            "A component that uses Redux"
+        ],
+        correctAnswerIndex: 2
+    },
+    {
+        question: "What is the purpose of key in React lists?",
+        options: [
+            "To style list items",
+            "To identify elements uniquely",
+            "To bind events",
+            "To sort items"
+        ],
+        correctAnswerIndex: 1
+    },
+    {
+        question: "What does useEffect do?",
+        options: [
+            "Handles form inputs",
+            "Manages component lifecycle",
+            "Creates new components",
+            "Adds styles"
+        ],
+        correctAnswerIndex: 1
+    },
+    {
+        question: "What is prop drilling?",
+        options: [
+            "Passing props to unrelated components",
+            "Passing props deeply through nested components",
+            "Using props in hooks",
+            "Ignoring props"
+        ],
+        correctAnswerIndex: 1
+    },
+    {
+        question: "How can you avoid prop drilling?",
+        options: [
+            "Using Redux",
+            "Using Context API",
+            "Using localStorage",
+            "Using props"
+        ],
+        correctAnswerIndex: 1
+    },
+    {
+        question: "What is the Context API used for?",
+        options: [
+            "Styling components",
+            "Managing global state",
+            "Handling events",
+            "Fetching data"
+        ],
+        correctAnswerIndex: 1
+    },
+    {
+        question: "What is useRef used for?",
+        options: [
+            "To store mutable values",
+            "To fetch data",
+            "To update state",
+            "To render components"
+        ],
+        correctAnswerIndex: 0
+    },
+            {
                 question: "What is the default command to start a Next.js development server?",
                 options: [
                     "npm start",
