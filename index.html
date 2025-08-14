@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="hi">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -8,12 +9,14 @@
     <script src="https://cdn.tailwindcss.com"></script>
     <style>
         @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap');
+
         body {
             font-family: 'Poppins', sans-serif;
             background-color: #f3f4f6;
         }
     </style>
 </head>
+
 <body class="flex items-center justify-center min-h-screen p-4 bg-gray-100">
 
     <div class="w-full max-w-2xl p-8 space-y-6 bg-white rounded-xl shadow-2xl">
@@ -22,23 +25,25 @@
             <div id="question-card" class="p-6 bg-gray-50 rounded-lg shadow-md">
                 <p id="question-text" class="text-xl font-semibold text-gray-700"></p>
             </div>
-            
+
             <div id="options-container" class="space-y-3">
                 <!-- Options will be rendered here by JavaScript -->
             </div>
-            
+
             <div id="feedback" class="h-6 text-center font-medium"></div>
 
             <div class="flex justify-center mt-6 space-x-4">
-                <button id="next-btn" class="px-6 py-2 font-semibold text-white transition-colors duration-300 bg-blue-500 rounded-full shadow-lg hover:bg-blue-600 focus:outline-none focus:ring-4 focus:ring-blue-300">
+                <button id="next-btn"
+                    class="px-6 py-2 font-semibold text-white transition-colors duration-300 bg-blue-500 rounded-full shadow-lg hover:bg-blue-600 focus:outline-none focus:ring-4 focus:ring-blue-300">
                     अगला प्रश्न
                 </button>
-                <button id="restart-btn" class="hidden px-6 py-2 font-semibold text-white transition-colors duration-300 bg-red-500 rounded-full shadow-lg hover:bg-red-600 focus:outline-none focus:ring-4 focus:ring-red-300">
+                <button id="restart-btn"
+                    class="hidden px-6 py-2 font-semibold text-white transition-colors duration-300 bg-red-500 rounded-full shadow-lg hover:bg-red-600 focus:outline-none focus:ring-4 focus:ring-red-300">
                     फिर से शुरू करें
                 </button>
             </div>
         </div>
-        
+
         <div id="result-container" class="hidden p-6 text-center bg-gray-50 rounded-lg shadow-md">
             <h2 class="mb-4 text-2xl font-bold text-gray-800">क्विज़ समाप्त!</h2>
             <p id="score-text" class="text-xl font-semibold text-gray-700"></p>
@@ -48,6 +53,106 @@
     <script>
         // Quiz questions and their details
         const questions = [
+            {
+                question: "What is Next.js primarily built upon?",
+                options: [
+                    "Angular and Babel",
+                    "React, Webpack, and Babel",
+                    "Vue and TypeScript",
+                    "Node.js and Express"
+                ],
+                correctAnswerIndex: 1
+            },
+            {
+                question: "Which feature of Next.js improves SEO and initial page load speed?",
+                options: [
+                    "Client-side rendering",
+                    "Lazy loading",
+                    "Server-side rendering",
+                    "Code splitting"
+                ],
+                correctAnswerIndex: 2
+            },
+            {
+                question: "What command is used to create a new Next.js app?",
+                options: [
+                    "npm init next-app",
+                    "create-next-app",
+                    "npx create-next-app myapp",
+                    "next new myapp"
+                ],
+                correctAnswerIndex: 2
+            },
+            {
+                question: "Which directory structure does Next.js use for routing?",
+                options: [
+                    "routes/",
+                    "src/pages/",
+                    "pages/",
+                    "components/"
+                ],
+                correctAnswerIndex: 2
+            },
+            {
+                question: "Which method is used for static site generation in Next.js?",
+                options: [
+                    "getServerSideProps",
+                    "getInitialProps",
+                    "getStaticProps",
+                    "getClientProps"
+                ],
+                correctAnswerIndex: 2
+            },
+            {
+                question: "What does SSR stand for in Next.js?",
+                options: [
+                    "Static Site Rendering",
+                    "Server-Side Rendering",
+                    "Secure Server Routing",
+                    "Server-Side Resources"
+                ],
+                correctAnswerIndex: 1
+            },
+            {
+                question: "Which hook is commonly used for client-side data fetching in Next.js?",
+                options: [
+                    "useState",
+                    "useEffect",
+                    "useRouter",
+                    "useContext"
+                ],
+                correctAnswerIndex: 1
+            },
+            {
+                question: "What is the purpose of getStaticPaths in Next.js?",
+                options: [
+                    "To fetch data on the client side",
+                    "To define dynamic routes for static generation",
+                    "To handle API requests",
+                    "To optimize images"
+                ],
+                correctAnswerIndex: 1
+            },
+            {
+                question: "Which component is used for client-side navigation in Next.js?",
+                options: [
+                    "NavLink",
+                    "RouterLink",
+                    "Link",
+                    "Anchor"
+                ],
+                correctAnswerIndex: 2
+            },
+            {
+                question: "What styling approach does Styled JSX enable in Next.js?",
+                options: [
+                    "Global CSS",
+                    "Scoped CSS-in-JS",
+                    "Inline styles",
+                    "External stylesheets"
+                ],
+                correctAnswerIndex: 1
+            },
             {
                 question: "1. useSearchParams() किस मॉड्यूल से इम्पोर्ट किया जाता है?",
                 options: ["a) next/router", "b) next/navigation", "c) react-router-dom", "d) next/url"],
@@ -72,31 +177,31 @@
                 question: "5. अगर आपको URL के क्वेरी पैरामीटर्स को बदलना है, तो useSearchParams() के साथ आमतौर पर किसका प्रयोग किया जाता है?",
                 options: ["a) useState", "b) useEffect", "c) useRouter और usePathname", "d) useParams"],
                 correctAnswerIndex: 2
-            },{
-        question: "Next.js में Static Generation और Server-side Rendering में मुख्य अंतर क्या है?",
-        options: ["Static Generation हर अनुरोध पर पेज को रेंडर करता है", "Server-side Rendering बिल्ड के समय पेज रेंडर करता है", "Static Generation पेजों को बिल्ड के समय जेनरेट करता है", "दोनों एक जैसे हैं"],
-        correctAnswerIndex: 2
-    },
-    {
-        question: "Next.js में API Routes का उपयोग किस लिए किया जाता है?",
-        options: ["क्लाइंट-साइड स्टेट मैनेजमेंट के लिए", "सर्वर साइड पर API एंडपॉइंट्स बनाने के लिए", "स्टाइलिंग के लिए", "रूटिंग मैनेजमेंट के लिए"],
-        correctAnswerIndex: 1
-    },
-    {
-        question: "Next.js में dynamic routing को कैसे इम्प्लीमेंट किया जाता है?",
-        options: ["getStaticProps के द्वारा", "getServerSideProps के द्वारा", "फ़ाइल नाम में ब्रैकेट्स [param] का उपयोग करके", "next.config.js में सेटिंग करके"],
-        correctAnswerIndex: 2
-    },
-    {
-        question: "Next.js में Image optimization कैसे काम करता है?",
-        options: ["सभी इमेज को ऑटोमैटिकली WebP में कन्वर्ट करता है", "केवल बड़े आकार की इमेज को लोड करता है", "img टैग के बजाए <Image> कंपोनेंट का उपयोग करता है, जो इमेज को लेजी लोड और ऑप्टिमाइज़ करता है", "कोई ऑप्टिमाइज़ेशन नहीं होता"],
-        correctAnswerIndex: 2
-    },
-    {
-        question: "Next.js में ISR (Incremental Static Regeneration) का मुख्य फायदा क्या है?",
-        options: ["हर अनुरोध पर पूर्ण सर्वर साइड रेंडरिंग", "बिना पुनर्निर्माण के स्थैतिक पेज को अपडेट करने की सुविधा", "क्लाइंट पर फुल पेज रेंडरिंग", "केवल क्लाइंट साइड डेटा फेचिंग"],
-        correctAnswerIndex: 1
-    }
+            }, {
+                question: "Next.js में Static Generation और Server-side Rendering में मुख्य अंतर क्या है?",
+                options: ["Static Generation हर अनुरोध पर पेज को रेंडर करता है", "Server-side Rendering बिल्ड के समय पेज रेंडर करता है", "Static Generation पेजों को बिल्ड के समय जेनरेट करता है", "दोनों एक जैसे हैं"],
+                correctAnswerIndex: 2
+            },
+            {
+                question: "Next.js में API Routes का उपयोग किस लिए किया जाता है?",
+                options: ["क्लाइंट-साइड स्टेट मैनेजमेंट के लिए", "सर्वर साइड पर API एंडपॉइंट्स बनाने के लिए", "स्टाइलिंग के लिए", "रूटिंग मैनेजमेंट के लिए"],
+                correctAnswerIndex: 1
+            },
+            {
+                question: "Next.js में dynamic routing को कैसे इम्प्लीमेंट किया जाता है?",
+                options: ["getStaticProps के द्वारा", "getServerSideProps के द्वारा", "फ़ाइल नाम में ब्रैकेट्स [param] का उपयोग करके", "next.config.js में सेटिंग करके"],
+                correctAnswerIndex: 2
+            },
+            {
+                question: "Next.js में Image optimization कैसे काम करता है?",
+                options: ["सभी इमेज को ऑटोमैटिकली WebP में कन्वर्ट करता है", "केवल बड़े आकार की इमेज को लोड करता है", "img टैग के बजाए <Image> कंपोनेंट का उपयोग करता है, जो इमेज को लेजी लोड और ऑप्टिमाइज़ करता है", "कोई ऑप्टिमाइज़ेशन नहीं होता"],
+                correctAnswerIndex: 2
+            },
+            {
+                question: "Next.js में ISR (Incremental Static Regeneration) का मुख्य फायदा क्या है?",
+                options: ["हर अनुरोध पर पूर्ण सर्वर साइड रेंडरिंग", "बिना पुनर्निर्माण के स्थैतिक पेज को अपडेट करने की सुविधा", "क्लाइंट पर फुल पेज रेंडरिंग", "केवल क्लाइंट साइड डेटा फेचिंग"],
+                correctAnswerIndex: 1
+            }
         ];
 
         // Get DOM elements
@@ -131,8 +236,8 @@
                 const optionBtn = document.createElement('button');
                 optionBtn.textContent = option;
                 optionBtn.classList.add(
-                    'w-full', 'px-4', 'py-3', 'text-lg', 'text-left', 'bg-gray-100', 
-                    'rounded-lg', 'shadow-sm', 'hover:bg-gray-200', 'transition-colors', 
+                    'w-full', 'px-4', 'py-3', 'text-lg', 'text-left', 'bg-gray-100',
+                    'rounded-lg', 'shadow-sm', 'hover:bg-gray-200', 'transition-colors',
                     'duration-200', 'focus:outline-none'
                 );
                 optionBtn.dataset.index = index;
@@ -211,4 +316,5 @@
     </script>
 
 </body>
+
 </html>
