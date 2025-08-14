@@ -1,0 +1,190 @@
+<!DOCTYPE html>
+<html lang="hi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>MCQ क्विज़</title>
+    <!-- Tailwind CSS CDN -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap');
+        body {
+            font-family: 'Poppins', sans-serif;
+            background-color: #f3f4f6;
+        }
+    </style>
+</head>
+<body class="flex items-center justify-center min-h-screen p-4 bg-gray-100">
+
+    <div class="w-full max-w-2xl p-8 space-y-6 bg-white rounded-xl shadow-2xl">
+        <h1 class="text-3xl font-bold text-center text-gray-800">Next.js `useSearchParams()` क्विज़</h1>
+        <div id="quiz-container" class="space-y-4">
+            <div id="question-card" class="p-6 bg-gray-50 rounded-lg shadow-md">
+                <p id="question-text" class="text-xl font-semibold text-gray-700"></p>
+            </div>
+            
+            <div id="options-container" class="space-y-3">
+                <!-- Options will be rendered here by JavaScript -->
+            </div>
+            
+            <div id="feedback" class="h-6 text-center font-medium"></div>
+
+            <div class="flex justify-center mt-6 space-x-4">
+                <button id="next-btn" class="px-6 py-2 font-semibold text-white transition-colors duration-300 bg-blue-500 rounded-full shadow-lg hover:bg-blue-600 focus:outline-none focus:ring-4 focus:ring-blue-300">
+                    अगला प्रश्न
+                </button>
+                <button id="restart-btn" class="hidden px-6 py-2 font-semibold text-white transition-colors duration-300 bg-red-500 rounded-full shadow-lg hover:bg-red-600 focus:outline-none focus:ring-4 focus:ring-red-300">
+                    फिर से शुरू करें
+                </button>
+            </div>
+        </div>
+        
+        <div id="result-container" class="hidden p-6 text-center bg-gray-50 rounded-lg shadow-md">
+            <h2 class="mb-4 text-2xl font-bold text-gray-800">क्विज़ समाप्त!</h2>
+            <p id="score-text" class="text-xl font-semibold text-gray-700"></p>
+        </div>
+    </div>
+
+    <script>
+        // Quiz questions and their details
+        const questions = [
+            {
+                question: "1. useSearchParams() किस मॉड्यूल से इम्पोर्ट किया जाता है?",
+                options: ["a) next/router", "b) next/navigation", "c) react-router-dom", "d) next/url"],
+                correctAnswerIndex: 1
+            },
+            {
+                question: "2. useSearchParams() किस प्रकार का डेटा रिटर्न करता है?",
+                options: ["a) एक जावास्क्रिप्ट ऑब्जेक्ट", "b) एक रीड-ओनली URLSearchParams ऑब्जेक्ट", "c) एक स्टेट हुक", "d) एक स्ट्रिंग"],
+                correctAnswerIndex: 1
+            },
+            {
+                question: "3. useSearchParams() कहां उपयोग किया जा सकता है?",
+                options: ["a) केवल Server Components में", "b) केवल Client Components में", "c) Server और Client दोनों Components में", "d) केवल API Routes में"],
+                correctAnswerIndex: 1
+            },
+            {
+                question: "4. searchParams.get('query') क्या रिटर्न करता है अगर query पैरामीटर मौजूद नहीं है?",
+                options: ["a) null", "b) undefined", "c) खाली स्ट्रिंग (\"\")", "d) एरर थ्रो करता है"],
+                correctAnswerIndex: 0
+            },
+            {
+                question: "5. अगर आपको URL के क्वेरी पैरामीटर्स को बदलना है, तो useSearchParams() के साथ आमतौर पर किसका प्रयोग किया जाता है?",
+                options: ["a) useState", "b) useEffect", "c) useRouter और usePathname", "d) useParams"],
+                correctAnswerIndex: 2
+            }
+        ];
+
+        // Get DOM elements
+        const quizContainer = document.getElementById('quiz-container');
+        const questionText = document.getElementById('question-text');
+        const optionsContainer = document.getElementById('options-container');
+        const nextBtn = document.getElementById('next-btn');
+        const restartBtn = document.getElementById('restart-btn');
+        const feedback = document.getElementById('feedback');
+        const resultContainer = document.getElementById('result-container');
+        const scoreText = document.getElementById('score-text');
+
+        // State variables
+        let currentQuestionIndex = 0;
+        let score = 0;
+        let answerSelected = false;
+
+        // Function to render the current question
+        function renderQuestion() {
+            // Hide result container if it's visible
+            resultContainer.classList.add('hidden');
+            quizContainer.classList.remove('hidden');
+
+            const currentQuestion = questions[currentQuestionIndex];
+            questionText.textContent = currentQuestion.question;
+            optionsContainer.innerHTML = ''; // Clear previous options
+            feedback.textContent = '';
+            nextBtn.classList.add('pointer-events-none', 'bg-gray-400'); // Disable next button initially
+            answerSelected = false;
+
+            currentQuestion.options.forEach((option, index) => {
+                const optionBtn = document.createElement('button');
+                optionBtn.textContent = option;
+                optionBtn.classList.add(
+                    'w-full', 'px-4', 'py-3', 'text-lg', 'text-left', 'bg-gray-100', 
+                    'rounded-lg', 'shadow-sm', 'hover:bg-gray-200', 'transition-colors', 
+                    'duration-200', 'focus:outline-none'
+                );
+                optionBtn.dataset.index = index;
+                optionBtn.addEventListener('click', handleAnswerClick);
+                optionsContainer.appendChild(optionBtn);
+            });
+        }
+
+        // Function to handle answer selection
+        function handleAnswerClick(event) {
+            if (answerSelected) return; // Prevent multiple clicks
+
+            answerSelected = true;
+            nextBtn.classList.remove('pointer-events-none', 'bg-gray-400'); // Enable next button
+
+            const selectedOption = event.target;
+            const selectedIndex = parseInt(selectedOption.dataset.index);
+            const currentQuestion = questions[currentQuestionIndex];
+
+            // Check if the answer is correct
+            if (selectedIndex === currentQuestion.correctAnswerIndex) {
+                score++;
+                feedback.textContent = 'सही उत्तर!';
+                feedback.classList.remove('text-red-500');
+                feedback.classList.add('text-green-500');
+                selectedOption.classList.add('bg-green-200');
+            } else {
+                feedback.textContent = 'गलत उत्तर।';
+                feedback.classList.remove('text-green-500');
+                feedback.classList.add('text-red-500');
+                selectedOption.classList.add('bg-red-200');
+
+                // Highlight the correct answer
+                const correctOption = optionsContainer.querySelector(`[data-index="${currentQuestion.correctAnswerIndex}"]`);
+                correctOption.classList.add('bg-green-200', 'border-2', 'border-green-500');
+            }
+
+            // Disable all options after a selection
+            Array.from(optionsContainer.children).forEach(btn => {
+                btn.removeEventListener('click', handleAnswerClick);
+            });
+        }
+
+        // Function to show the final score
+        function showResult() {
+            quizContainer.classList.add('hidden');
+            resultContainer.classList.remove('hidden');
+            scoreText.textContent = `आपने ${questions.length} में से ${score} प्रश्नों का सही उत्तर दिया है।`;
+            restartBtn.classList.remove('hidden');
+        }
+
+        // Function to reset the quiz
+        function restartQuiz() {
+            currentQuestionIndex = 0;
+            score = 0;
+            restartBtn.classList.add('hidden');
+            renderQuestion();
+        }
+
+        // Event listener for the "Next Question" button
+        nextBtn.addEventListener('click', () => {
+            if (!answerSelected) return; // Do nothing if no answer is selected
+            currentQuestionIndex++;
+            if (currentQuestionIndex < questions.length) {
+                renderQuestion();
+            } else {
+                showResult();
+            }
+        });
+
+        // Event listener for the "Restart Quiz" button
+        restartBtn.addEventListener('click', restartQuiz);
+
+        // Initial render
+        renderQuestion();
+    </script>
+
+</body>
+</html>
