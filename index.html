@@ -55,6 +55,86 @@ color: white;
         // Quiz questions and their details
         const questions = [
             {
+        question: "1. What does the useQuery hook return?",
+        options: [
+            "A. Only the fetched data",
+            "B. Data, error, and loading state",
+            "C. Only the loading state",
+            "D. Only the error state"
+        ],
+        correctAnswerIndex: 1
+    },
+    {
+        question: "2. What is the purpose of a query key in useQuery?",
+        options: [
+            "A. To define the API endpoint",
+            "B. To identify and cache the query uniquely",
+            "C. To set the timeout duration",
+            "D. To trigger a mutation"
+        ],
+        correctAnswerIndex: 1
+    },
+    {
+        question: "3. Which hook is used to perform create/update/delete operations in React Query?",
+        options: [
+            "A. useQuery",
+            "B. useEffect",
+            "C. useMutation",
+            "D. useReducer"
+        ],
+        correctAnswerIndex: 2
+    },
+    {
+        question: "4. What does isFetching indicate in React Query?",
+        options: [
+            "A. Initial data fetch",
+            "B. Background data refetch",
+            "C. Mutation in progress",
+            "D. Query key mismatch"
+        ],
+        correctAnswerIndex: 1
+    },
+    {
+        question: "5. How can you manually refetch data in React Query?",
+        options: [
+            "A. By calling refetch() from useQuery",
+            "B. By reloading the page",
+            "C. By changing the query key",
+            "D. By using useMutation"
+        ],
+        correctAnswerIndex: 0
+    },
+    {
+        question: "6. What does invalidateQueries do?",
+        options: [
+            "A. Deletes cached data permanently",
+            "B. Prevents future queries from running",
+            "C. Forces a query to refetch and update its data",
+            "D. Logs query errors"
+        ],
+        correctAnswerIndex: 2
+    },
+    {
+        question: "7. Which lifecycle callback is used in useMutation to invalidate queries after a successful mutation?",
+        options: [
+            "A. onError",
+            "B. onSettled",
+            "C. onSuccess",
+            "D. onUpdate"
+        ],
+        correctAnswerIndex: 2
+    },
+    {
+        question: "8. What is one key difference between isLoading and isFetching?",
+        options: [
+            "A. isLoading is for mutations, isFetching is for queries",
+            "B. isLoading is true only during the initial fetch",
+            "C. isFetching is true only when there’s an error",
+            "D. They are interchangeable"
+        ],
+        correctAnswerIndex: 1
+    },
+            {
         question: `इस कोड में ?. (optional chaining) का उपयोग किसलिए किया गया है?
         
         \`\`\`javascript
