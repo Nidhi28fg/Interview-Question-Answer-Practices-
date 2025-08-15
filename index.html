@@ -54,6 +54,306 @@ color: white;
     <script>
         // Quiz questions and their details
         const questions = [
+             {
+        question: "1) React Node, Element, Component में अंतर क्या है?",
+        options: [
+            "a) Node: string/number/element; Element: React.createElement का output; Component: यूजर-defined function/class",
+            "b) सभी समान हैं",
+            "c) Node: सिर्फ CSS में; Element: सिर्फ JSX में; Component: सिर्फ DOM में",
+            "d) Component और Element का मतलब एक ही है"
+        ],
+        correctAnswerIndex: 0
+    },
+    {
+        question: "2) React Fragments का इस्तेमाल क्यों होता है?",
+        options: [
+            "a) बिना एक्स्ट्रा DOM node के multiple elements wrapping",
+            "b) Animation के लिए",
+            "c) API calls के लिए",
+            "d) Styling के लिए"
+        ],
+        correctAnswerIndex: 0
+    },
+    {
+        question: "3) React में key prop का उद्देश्य क्या है?",
+        options: [
+            "a) Styling के लिए",
+            "b) Efficient list reconciliation और सही item identity के लिए",
+            "c) Components hidden करने के लिए",
+            "d) Props track करने के लिए"
+        ],
+        correctAnswerIndex: 1
+    },
+    {
+        question: "4) Array indices को React key के रूप में इस्तेमाल करने का नुकसान क्या है?",
+        options: [
+            "a) कोई समस्या नहीं",
+            "b) Keys बदलने पर component state mix हो सकता है, जिससे अनचाहे UI और perf bugs आते हैं",
+            "c) Keys से styling बदलता है",
+            "d) Server-side rendering fail हो सकता है"
+        ],
+        correctAnswerIndex: 1
+    },
+    {
+        question: "5) Controlled और Uncontrolled components में फर्क क्या है?",
+        options: [
+            "a) Controlled: value React state द्वारा; Uncontrolled: value DOM खुद मैनेज करता है (ref से access)",
+            "b) Controlled: सिर्फ props; Uncontrolled: सिर्फ state",
+            "c) दोनों एक ही हैं",
+            "d) Controlled सिर्फ forms में"
+        ],
+        correctAnswerIndex: 0
+    },
+    {
+        question: "6) Lift State Up क्या है, और क्यों जरूरी है?",
+        options: [
+            "a) Child से Parent में state भेजना ताकि siblings या hierarchy में data शेयर हो सके",
+            "b) State को local रखना",
+            "c) Props drilling कम करना",
+            "d) Styling के लिए"
+        ],
+        correctAnswerIndex: 0
+    },
+    {
+        question: "7) Pure Components क्या होते हैं?",
+        options: [
+            "a) Components जो props/state बदलने पर ही re-render होते हैं; shallow comparison कर के",
+            "b) Global variable यूज करते हैं",
+            "c) सिर्फ server पर चलते हैं",
+            "d) uncontrolled होते हैं"
+        ],
+        correctAnswerIndex: 0
+    },
+    {
+        question: "8) createElement और cloneElement में क्या फर्क है?",
+        options: [
+            "a) createElement: नया React element बनाता है; cloneElement: मौजूदा element को copy/extend करता है",
+            "b) दोनों एक ही हैं",
+            "c) Styling के लिए",
+            "d) createElement सिर्फ server पर"
+        ],
+        correctAnswerIndex: 0
+    },
+    {
+        question: "9) PropTypes का React में क्या रोल है?",
+        options: [
+            "a) Styling के लिए",
+            "b) Props का type validate करना तथा डेवेलपमेंटर को गलत usage पर warning देना",
+            "c) Routing के लिए",
+            "d) Data fetching"
+        ],
+        correctAnswerIndex: 1
+    },
+    {
+        question: "10) Stateless components क्या हैं?",
+        options: [
+            "a) Components जिनमें सिर्फ props से render होता है, state नहीं होती",
+            "b) Components सिर्फ class में",
+            "c) Styling components",
+            "d) Server-only"
+        ],
+        correctAnswerIndex: 0
+    },
+    {
+        question: "11) Stateful components क्या हैं?",
+        options: [
+            "a) Components जिनकी अपनी state होती है",
+            "b) सिर्फ global state यूज करते हैं",
+            "c) CSS-in-JS apply करते हैं",
+            "d) Server-only"
+        ],
+        correctAnswerIndex: 0
+    },
+    {
+        question: "12) React Hooks के फायदे क्या हैं?",
+        options: [
+            "a) Code reusability, logic separation, class/component boundaries के बिना state एवं side-effects handle करना",
+            "b) Styling ही",
+            "c) Routing",
+            "d) Server connectivity"
+        ],
+        correctAnswerIndex: 0
+    },
+    {
+        question: "13) React Hooks के मुख्य नियम क्या हैं?",
+        options: [
+            "a) सिर्फ component के top-level/root में call करें; Loop/condition के अंदर नहीं",
+            "b) Class components में भी call करें",
+            "c) किसी भी जगह call करें",
+            "d) सिर्फ server पर"
+        ],
+        correctAnswerIndex: 0
+    },
+    {
+        question: "14) useEffect और useLayoutEffect में क्या अंतर है?",
+        options: [
+            "a) useEffect render के बाद asynchronous है; useLayoutEffect DOM mutations से पहले synchronous चलता है",
+            "b) दोनों एक ही हैं",
+            "c) useEffect CSS change करता है",
+            "d) useLayoutEffect सिर्फ server पर"
+        ],
+        correctAnswerIndex: 0
+    },
+    {
+        question: "15) useEffect का dependency array क्या प्रभावित करता है?",
+        options: [
+            "a) Effect कब चलेगा, किन values के बदलने पर चलेगा",
+            "b) CSS का कलर",
+            "c) Routing behavior",
+            "d) Server rendering"
+        ],
+        correctAnswerIndex: 0
+    },
+    {
+        question: "16) useRef hook क्या है, और कब यूज करें?",
+        options: [
+            "a) DOM या react value को direct access/persistency/imperative व्यापार के लिए",
+            "b) Styling के लिए",
+            "c) Routing के लिए",
+            "d) State management"
+        ],
+        correctAnswerIndex: 0
+    },
+    {
+        question: "17) React state को mutate करने की सलाह क्यों नहीं दी जाती?",
+        options: [
+            "a) इससे एडिट्स सीधे DOM में दिखते हैं",
+            "b) Mutate करने से re-render नहीं होता, bugs और predictability कम होती है",
+            "c) CSS गलत हो सकती है",
+            "d) API calls fail"
+        ],
+        correctAnswerIndex: 1
+    },
+    {
+        question: "18) React में reconciliation क्या है?",
+        options: [
+            "a) पुरानी और नई virtual DOM tree में फर्क निकालकर minimal DOM updates करना",
+            "b) Styling change",
+            "c) Routing logic",
+            "d) Server-only logic"
+        ],
+        correctAnswerIndex: 0
+    },
+    {
+        question: "19) Hydration क्या है?",
+        options: [
+            "a) SSR से render हुई HTML पर client-side JS को attach करना",
+            "b) Styling करना",
+            "c) State को reset करना",
+            "d) CSS-in-JS"
+        ],
+        correctAnswerIndex: 0
+    },
+    {
+        question: "20) Higher-Order Components (HOC) क्या हैं?",
+        options: [
+            "a) एक fn जो component ले, नया modified component लौटाए",
+            "b) Data fetching के लिए",
+            "c) server रेंडरिंग",
+            "d) सिर्फ props drilling"
+        ],
+        correctAnswerIndex: 0
+    },
+    {
+        question: "21) React में performance optimization के सामान्य तरीके कौन से हैं?",
+        options: [
+            "a) Component memoization, keys का सही इस्तेमाल, lazy loading, virtualization, minimize re-renders",
+            "b) CSS classes बढ़ाना",
+            "c) Server रिक्वेस्ट बढ़ाना",
+            "d) हर जगह setState करना"
+        ],
+        correctAnswerIndex: 0
+    },
+    {
+        question: "22) useReducer hook का React में उद्देश्य क्या है?",
+        options: [
+            "a) Complex state logic को reducers के जरिए handle करना जैसे Redux",
+            "b) Styling",
+            "c) Routing",
+            "d) Data fetching"
+        ],
+        correctAnswerIndex: 0
+    },
+    {
+        question: "23) React एप्लिकेशन को टेस्ट कैसे करते हैं?",
+        options: [
+            "a) React Testing Library/Jest से user-centric behavior, rendering, events आदि पर test लिखकर",
+            "b) सिर्फ manual test",
+            "c) CSS test",
+            "d) Server debug"
+        ],
+        correctAnswerIndex: 0
+    },
+    {
+        question: "24) SSR (Server-side Rendering) क्या है?",
+        options: [
+            "a) Server पर React आधारित HTML generate करके client को भेजना",
+            "b) Client-only rendering",
+            "c) Data fetching",
+            "d) Styling"
+        ],
+        correctAnswerIndex: 0
+    },
+    {
+        question: "25) SSG (Static Site Generation) क्या है?",
+        options: [
+            "a) Build time पर static HTML generate करके CDN से serve करना",
+            "b) सिर्फ client पर",
+            "c) केवल data fetching",
+            "d) CSS"
+        ],
+        correctAnswerIndex: 0
+    },
+    {
+        question: "26) React में lazy loading क्या है?",
+        options: [
+            "a) Components/code को जरूरत पड़ने पर load करना",
+            "b) Styling delay",
+            "c) Server delay",
+            "d) Only images"
+        ],
+        correctAnswerIndex: 0
+    },
+    {
+        question: "27) useContext hook का उपयोग?",
+        options: [
+            "a) Context value को किसी भी component में access करने/consume करने के लिए",
+            "b) Styling",
+            "c) Routing",
+            "d) Data fetching"
+        ],
+        correctAnswerIndex: 0
+    },
+    {
+        question: "28) useMemo hook का उद्देश्य?",
+        options: [
+            "a) महंगे computation का नतीजा cache रखना, बार-बार calculate करने से बचना",
+            "b) Styling",
+            "c) Routing",
+            "d) State mutate"
+        ],
+        correctAnswerIndex: 0
+    },
+    {
+        question: "29) useCallback hook का उद्देश्य?",
+        options: [
+            "a) उन्हीं dependencies पर fn reference cache करना, unnecessary re-renders रोकना",
+            "b) Styling",
+            "c) Routing",
+            "d) Data fetch"
+        ],
+        correctAnswerIndex: 0
+    },
+    {
+        question: "30) useImperativeHandle hook का React में रोल?",
+        options: [
+            "a) Parent को ref के जरिए child की imperative methods expose करना",
+            "b) Styling",
+            "c) Server-side data fetch",
+            "d) Prop drilling"
+        ],
+        correctAnswerIndex: 0
+    },
  {
         question: "Express.js में किस middleware का उपयोग HTTP request लॉग करने के लिए किया जाता है?",
         options: [
