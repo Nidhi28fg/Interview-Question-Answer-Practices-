@@ -54,6 +54,207 @@ color: white;
     <script>
         // Quiz questions and their details
         const questions = [
+ {
+        question: "Express.js में किस middleware का उपयोग HTTP request लॉग करने के लिए किया जाता है?",
+        options: [
+            "a) body-parser",
+            "b) morgan",
+            "c) helmet",
+            "d) cors"
+        ],
+        correctAnswerIndex: 1
+    },
+    {
+        question: "React में useEffect का dependency array क्यों जरूरी होता है?",
+        options: [
+            "a) यह component को mount करता है",
+            "b) यह बताता है कि effect कब दोबारा चलेगा (सिर्फ dependencies बदलने पर)",
+            "c) यह state को reset करता है",
+            "d) यह props validate करता है"
+        ],
+        correctAnswerIndex: 1
+    },
+    {
+        question: "MongoDB में aggregate pipeline क्या करता है?",
+        options: [
+            "a) Document को update करता है",
+            "b) Documents पर complex data processing और transformations करता है, जैसे filtering, grouping, sorting",
+            "c) Indexes बनाता है",
+            "d) Collection delete करता है"
+        ],
+        correctAnswerIndex: 1
+    },
+    {
+        question: "React.memo कब उपयोगी है?",
+        options: [
+            "a) Data fetching के लिए",
+            "b) Component को re-rendering से बचाने के लिए जब props नहीं बदले हों",
+            "c) CSS apply करने के लिए",
+            "d) Routing के लिए"
+        ],
+        correctAnswerIndex: 1
+    },
+    {
+        question: "Node.js में event loop क्या करता है?",
+        options: [
+            "a) हीट मैप बनाता है",
+            "b) Asynchronous operations को प्रोसेस करता है और कॉलबैक को queue में रखता है ताकि single-threaded environment में concurrency हो सके",
+            "c) Database connections खोलता है",
+            "d) DOM render करता है"
+        ],
+        correctAnswerIndex: 1
+    },
+    {
+        question: "React Router में Nested Routes का उद्देश्य क्या है?",
+        options: [
+            "a) Page स्लाइड इफेक्ट देने के लिए",
+            "b) Multiple components को एक ही route में load करने के लिए hierarchical navigation support",
+            "c) Server-side rendering के लिए",
+            "d) सिर्फ 404 pages को दिखाने के लिए"
+        ],
+        correctAnswerIndex: 1
+    },
+    {
+        question: "Express.js में error handling middleware को कैसे पहचाना जाता है?",
+        options: [
+            "a) जो चार arguments (err, req, res, next) लेता है",
+            "b) जो सिर्फ req और res लेता है",
+            "c) जो promises return करता है",
+            "d) जो सिर्फ GET request handle करता है"
+        ],
+        correctAnswerIndex: 0
+    },
+    {
+        question: "React में useCallback और useMemo में क्या मुख्य अंतर है?",
+        options: [
+            "a) useCallback एक memoized function reference देता है; useMemo एक memoized value देता है",
+            "b) दोनों एक ही हैं",
+            "c) useCallback styling के लिए है",
+            "d) useMemo events के लिए है"
+        ],
+        correctAnswerIndex: 0
+    },
+    {
+        question: "MongoDB में indexing किसका काम करता है?",
+        options: [
+            "a) Document को size में कम करता है",
+            "b) Query performance को बेहतर बनाता है, faster data retrieval के लिए",
+            "c) Data को backup करता है",
+            "d) केवल data को compress करता है"
+        ],
+        correctAnswerIndex: 1
+    },
+    {
+        question: "React में Error Boundary क्यों ज़रूरी है?",
+        options: [
+            "a) Styling errors को रोकने के लिए",
+            "b) JavaScript runtime errors को पकड़ने के लिए ताकि UI टूटे बिना fallback UI दिखाया जा सके",
+            "c) Data fetching को optimize करने के लिए",
+            "d) API calls को manage करने के लिए"
+        ],
+        correctAnswerIndex: 1
+    },
+            
+            {
+        question: "Express.js वेब एप्लिकेशन में routing कैसे संभालता है?",
+        options: [
+            "a) सिर्फ HTML फाइलों से",
+            "b) Route handler functions (जैसे app.get(), app.post()) द्वारा जिसमें URL और request methods के आधार पर अलग-अलग response भेजे जाते हैं",
+            "c) CSS selectors से",
+            "d) Server restart से"
+        ],
+        correctAnswerIndex: 1
+    },
+    {
+        question: "React में class component और functional component में सबसे बड़ा फर्क क्या है?",
+        options: [
+            "a) Class component केवल CSS render करते हैं",
+            "b) Functional component hooks का उपयोग कर सकते हैं, class component नहीं",
+            "c) Class component JSX नहीं लिख सकते",
+            "d) Functional component server पर चलते हैं"
+        ],
+        correctAnswerIndex: 1
+    },
+    {
+        question: "MERN stack में MongoDB का उद्देश्य क्या है?",
+        options: [
+            "a) Frontend को host करना",
+            "b) NoSQL database के रूप में flexible data store प्रदान करना",
+            "c) सिर्फ स्टेट मैनेज करना",
+            "d) Routing handle करना"
+        ],
+        correctAnswerIndex: 1
+    },
+    {
+        question: "MERN stack क्या है और इसके मुख्य घटक कौन हैं?",
+        options: [
+            "a) Mysql, Express, Ruby, Node",
+            "b) MongoDB, Express.js, React.js, Node.js",
+            "c) MongoDB, EJS, Redux, Nginx",
+            "d) MongoDB, Express.js, Vue.js, Node.js"
+        ],
+        correctAnswerIndex: 1
+    },
+    {
+        question: "Express.js में middleware का उद्देश्य क्या है और इसे कैसे इम्प्लीमेंट करते हैं?",
+        options: [
+            "a) View render करना",
+            "b) Request/response के बीच processing, authentication, logging आदि के लिए; app.use() या route-specific function से",
+            "c) Query optimize करना",
+            "d) केवल static files serve करना"
+        ],
+        correctAnswerIndex: 1
+    },
+    {
+        question: "React एप्लिकेशन में state management कैसे करते हैं?",
+        options: [
+            "a) केवल HTML attributes से",
+            "b) useState, useReducer, Context API, Redux या अन्य लाइब्रेरी के माध्यम से",
+            "c) serverside sessions से",
+            "d) CSS classes से"
+        ],
+        correctAnswerIndex: 1
+    },
+    {
+        question: "MongoDB और traditional relational database में अंतर क्या है?",
+        options: [
+            "a) Relational DB टैक्स्ट फाइल store करता है, MongoDB image",
+            "b) MongoDB NoSQL, schema-less, flexible documents; relational databases SQL, fixed schema, tables/rows",
+            "c) दोनों समान हैं",
+            "d) Relational DB केवल frontend के लिए"
+        ],
+        correctAnswerIndex: 1
+    },
+    {
+        question: "Node.js एप्लिकेशन में MongoDB से कनेक्ट कैसे करते हैं?",
+        options: [
+            "a) HTTP POST से",
+            "b) Mongoose/MongoDB driver लाइब्रेरी use करके, connection string के साथ",
+            "c) केवल HTML form से",
+            "d) direct React से"
+        ],
+        correctAnswerIndex: 1
+    },
+    {
+        question: "React अन्य frontend frameworks (Angular/Vue.js) से कैसे अलग है?",
+        options: [
+            "a) React template system use करता है",
+            "b) React सिर्फ state management के लिए है",
+            "c) React primarily declarative है, component-based architecture और virtual DOM का इस्तेमाल करता है",
+            "d) React में कोई reusability नहीं"
+        ],
+        correctAnswerIndex: 2
+    },
+    {
+        question: "MERN stack में Node.js की भूमिका क्या है और क्यों प्रयुक्त होता है?",
+        options: [
+            "a) सिर्फ static फाइल सर्व करने के लिए",
+            "b) JavaScript runtime, backend server environment; Express.js को host करने और API handle करने के लिए",
+            "c) CSS process करने के लिए",
+            "d) कोई विशेष रोल नहीं"
+        ],
+        correctAnswerIndex: 1
+    },
                 {
         question: "React क्या है और यह कैसे काम करता है?",
         options: [
