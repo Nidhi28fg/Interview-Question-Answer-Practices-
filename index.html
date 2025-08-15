@@ -55,6 +55,76 @@ color: white;
         // Quiz questions and their details
         const questions = [
              {
+        question: "React Query के useMutation hook में .mutate method का क्या काम है?",
+        options: [
+            "a) Data fetch करना",
+            "b) Mutation operation को trigger करना जो API पर POST/PUT/DELETE request भेजे",
+            "c) Cache invalidate करना",
+            "d) State reset करना"
+        ],
+        correctAnswerIndex: 1
+    },
+    {
+        question: ".mutate method को कब कॉल किया जाता है?",
+        options: [
+            "a) जब data fetch करना हो",
+            "b) जब asynchronous mutation (जैसे data create, update, delete) करना हो",
+            "c) Browser reload करते समय",
+            "d) Component mount होते ही"
+        ],
+        correctAnswerIndex: 1
+    },
+    {
+        question: ".mutate के साथ कौन से arguments मिलते हैं?",
+        options: [
+            "a) सिर्फ callback functions",
+            "b) Mutation के लिए required variables/data, जैसे payload या IDs",
+            "c) कोई argument नहीं",
+            "d) केवल boolean flag"
+        ],
+        correctAnswerIndex: 1
+    },
+    {
+        question: ".mutate के साथ onSuccess और onError callbacks कैसे trigger होते हैं?",
+        options: [
+            "a) Mutation सफल या असफल होने पर, रिपॉन्स के हिसाब से आप संबंधित callbacks सेट कर सकते हैं।",
+            "b) वे हमेशा चलते हैं।",
+            "c) कॉल नहीं होते।",
+            "d) केवल data fetch पर काम करते हैं।"
+        ],
+        correctAnswerIndex: 0
+    },
+    {
+        question: "निम्नलिखित में से .mutate के सही इस्तेमाल का उदाहरण कौन सा है?",
+        options: [
+            "a) mutation.mutate({ id: 1 });",
+            "b) mutation.mutate(); (कोई argument नहीं)",
+            "c) mutation.mutate(123); (number argument)",
+            "d) mutation.mutate(\"true\");"
+        ],
+        correctAnswerIndex: 0
+    },
+    {
+        question: ".mutate method asynchronous है या synchronous?",
+        options: [
+            "a) Synchronous",
+            "b) Asynchronous, क्योंकि यह API call करता है और Promises return करता है",
+            "c) दोनों",
+            "d) None"
+        ],
+        correctAnswerIndex: 1
+    },
+    {
+        question: "क्या .mutate method promise return करता है जिससे आप .then() और .catch() कर सकें?",
+        options: [
+            "a) हाँ, mutateAsync variant promise return करता है, पर .mutate नहीं करता।",
+            "b) नहीं, यह promise नहीं देता।",
+            "c) दोनों promise देते हैं।",
+            "d) कोई भी नहीं।"
+        ],
+        correctAnswerIndex: 0
+    },
+             {
         question: "1) React Node, Element, Component में अंतर क्या है?",
         options: [
             "a) Node: string/number/element; Element: React.createElement का output; Component: यूजर-defined function/class",
