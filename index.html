@@ -54,6 +54,77 @@ color: white;
     <script>
         // Quiz questions and their details
         const questions = [
+
+            {
+        question: "2) await connectDB(); का क्या उद्देश्य है?",
+        options: [
+            "a) User authenticate करना",
+            "b) MongoDB से कनेक्ट करना",
+            "c) Payload validate करना",
+            "d) Response भेजना"
+        ],
+        correctAnswerIndex: 1
+    },
+    {
+        question: "3) const payload = await request.json(); क्या करता है?",
+        options: [
+            "a) Request body को JSON में पढ़ता है",
+            "b) Request headers पढ़ता है",
+            "c) Response भेजता है",
+            "d) Request को cancel करता है"
+        ],
+        correctAnswerIndex: 0
+    },
+    {
+        question: "4) if (!Array.isArray(ids) || ids.length === 0) का क्या मतलब है?",
+        options: [
+            "a) ids empty या array नहीं है तो error लौटाओ",
+            "b) ids में डेटा जोड़ो",
+            "c) ids को string में रूपांतरित करो",
+            "d) ids को validate मत करो"
+        ],
+        correctAnswerIndex: 0
+    },
+    {
+        question: "5) MediaModel.find({ id: { $in: ids } }).lean(); का क्या मतलब है?",
+        options: [
+            "a) ids के media documents खोजना",
+            "b) सभी मीडिया दिखाना",
+            "c) नया media बनाना",
+            "d) media delete करना"
+        ],
+        correctAnswerIndex: 0
+    },
+    {
+        question: "6) \"SD\" और \"RSD\" किसके लिए valid deleteType values हैं?",
+        options: [
+            "a) Save और Restore",
+            "b) Soft Delete और Restore Soft Delete",
+            "c) Server Delete और Random Delete",
+            "d) Strong Delete और Rapid Delete"
+        ],
+        correctAnswerIndex: 1
+    },
+    {
+        question: "7) \"SD\" deleteType के case में क्या update किया जाता है?",
+        options: [
+            "a) media document delete हो जाता है",
+            "b) deletedAt फील्ड को current time से सेट किया जाता है (soft delete)",
+            "c) media को restore किया जाता है",
+            "d) कुछ update नहीं होता"
+        ],
+        correctAnswerIndex: 1
+    },
+    {
+        question: "8) \"RSD\" deleteType के case में क्या update किया जाता है?",
+        options: [
+            "a) deletedAt फील्ड को null किया जाता है (restore)",
+            "b) media delete हो जाता है",
+            "c) नया media add होता है",
+            "d) कोई response नहीं भेजा जाता"
+        ],
+        correctAnswerIndex: 0
+    },
              {
         question: "Next.js में route.js फाइल का उपयोग किस लिए होता है?",
         options: [
