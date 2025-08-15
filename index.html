@@ -55,6 +55,26 @@ color: white;
         // Quiz questions and their details
         const questions = [
             {
+        question: "6. यदि आप चाहते हैं कि mutation के बाद UI अपडेट तुरंत दिखे, तो React Query में आप क्या करेंगे?",
+        options: [
+            "a) mutationFn में return value ignore कर देंगे",
+            "b) useQueryClient से invalidateQueries चलाएंगे",
+            "c) axios की जगह fetch यूज करेंगे",
+            "d) onError callback में data को स्टोर करेंगे"
+        ],
+        correctAnswerIndex: 1
+    },
+    {
+        question: "2. इस कोड में queryClient.invalidateQueries([queryKey]) का क्या उद्देश्य है?",
+        options: [
+            "a) Cache को साफ़ कर देना",
+            "b) Cache में डेटा को डिलीट कर देना",
+            "c) Cache में मौजूद उस query को फिर से refetch कराना",
+            "d) Cache में डेटा को नई value से ओवरराइट करना"
+        ],
+        correctAnswerIndex: 2
+    },
+            {
         question: "5. !!isMobile क्यों इस्तेमाल किया जाता है?",
         options: [
             "a) undefined को हटाने के लिए",
