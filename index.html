@@ -54,6 +54,297 @@ color: white;
     <script>
         // Quiz questions and their details
         const questions = [
+                {
+        question: "React क्या है और यह कैसे काम करता है?",
+        options: [
+            "एक CSS फ्रेमवर्क है जो स्टेट मैनेज करता है",
+            "एक UI लाइब्रेरी है जो Virtual DOM के जरिए declarative तरीके से UI अपडेट करती है",
+            "एक बैकएंड रनटाइम है जो सर्वर पर चलता है",
+            "एक डेटाबेस है"
+        ],
+        correctAnswerIndex: 1
+    },
+    {
+        question: "Functional और Class components में प्रमुख अंतर क्या है?",
+        options: [
+            "Functional components lifecycle methods सपोर्ट नहीं करते",
+            "Class components JSX नहीं लिख सकते",
+            "Functional components hooks के साथ state और side-effects मैनेज करते हैं",
+            "Class components सिर्फ server पर चलते हैं"
+        ],
+        correctAnswerIndex: 2
+    },
+    {
+        question: "Props और State में क्या अंतर है?",
+        options: [
+            "Props mutable और State immutable है",
+            "Props parent से आता है और immutable है; State component के अंदर मैनेज होती है और mutable है",
+            "दोनों एक जैसे हैं",
+            "Props सिर्फ class components में होते हैं"
+        ],
+        correctAnswerIndex: 1
+    },
+    {
+        question: "JSX क्या है?",
+        options: [
+            "JavaScript का नया runtime",
+            "HTML का superset",
+            "JavaScript के अंदर XML-समान syntax जिससे UI को declaratively लिखा जाता है",
+            "CSS-in-JS की लाइब्रेरी"
+        ],
+        correctAnswerIndex: 2
+    },
+    {
+        question: "एक simple component बनाने के लिए क्या जरूरी है?",
+        options: [
+            "केवल HTML फाइल",
+            "एक function जो JSX return करे",
+            "केवल CSS फाइल",
+            "एक class जो DOM APIs use करे"
+        ],
+        correctAnswerIndex: 1
+    },
+    {
+        question: "Virtual DOM क्या है?",
+        options: [
+            "Actual DOM का lightweight in-memory representation जो diffing के लिए use होता है",
+            "Browser का internal CSS engine",
+            "Node.js का module system",
+            "JSON store"
+        ],
+        correctAnswerIndex: 0
+    },
+    {
+        question: "Lists में key prop क्यों जरूरी है?",
+        options: [
+            "Styling के लिए",
+            "Security के लिए",
+            "Efficient reconciliation और सही item identity के लिए",
+            "Server rendering के लिए"
+        ],
+        correctAnswerIndex: 2
+    },
+    {
+        question: "React में event handling कैसा होता है?",
+        options: [
+            "Inline strings",
+            "Lowercase attributes के साथ",
+            "CamelCase handlers जैसे onClick और synthetic events के जरिए",
+            "Only addEventListener"
+        ],
+        correctAnswerIndex: 2
+    },
+    {
+        question: "Default props कैसे सेट करते हैं (functional components)?",
+        options: [
+            "Component.defaultProps = { ... } या parameter default values से",
+            "setState से",
+            "useEffect से",
+            "useRef से"
+        ],
+        correctAnswerIndex: 0
+    },
+    {
+        question: "Conditional rendering का सही तरीका कौन सा है?",
+        options: [
+            "HTML comments से",
+            "Ternary operators, logical &&, या early returns से",
+            "window.alert से",
+            "switch-case DOM में"
+        ],
+        correctAnswerIndex: 1
+    },
+    {
+        question: "useState और useEffect किसलिए हैं?",
+        options: [
+            "DOM APIs use करने के लिए",
+            "State मैनेज करने और side-effects (जैसे fetch, subscriptions) हैंडल करने के लिए",
+            "सिर्फ performance के लिए",
+            "सिर्फ styling के लिए"
+        ],
+        correctAnswerIndex: 1
+    },
+    {
+        question: "Controlled vs Uncontrolled components का फर्क?",
+        options: [
+            "Uncontrolled में state parent रखता है",
+            "Controlled में input value React state से आती है; Uncontrolled में DOM खुद value मैनेज करता है (ref से access)",
+            "दोनों एक जैसे हैं",
+            "Uncontrolled सिर्फ server पर चलते हैं"
+        ],
+        correctAnswerIndex: 1
+    },
+    {
+        question: "React Router क्या करता है?",
+        options: [
+            "Server को restart करता है",
+            "Client-side routing से URL बदलकर views स्वैप करता है बिना full page reload",
+            "Database queries चलाता है",
+            "CSS transitions देता है"
+        ],
+        correctAnswerIndex: 1
+    },
+    {
+        question: "Context API vs Redux में सही कथन?",
+        options: [
+            "Context side-effects हैंडल करता है",
+            "Redux सिर्फ styling करता है",
+            "Context prop drilling कम करने हेतु scoped data sharing; Redux predictable global state, tooling और middleware देता है",
+            "दोनों identical हैं"
+        ],
+        correctAnswerIndex: 2
+    },
+    {
+        question: "Prop drilling समस्या और समाधान?",
+        options: [
+            "CSS variables से हल",
+            "Values को कई स्तरों तक props से पास करना — समाधान: Context, state co-location, composition, Redux/Zustand",
+            "HTML tables से हल",
+            "class components से हल"
+        ],
+        correctAnswerIndex: 1
+    },
+    {
+        question: "React.memo का उपयोग कब?",
+        options: [
+            "हमेशा",
+            "जब props stable हों और re-render महँगा हो; shallow props comparison से अनावश्यक re-renders रोके",
+            "केवल class components में",
+            "केवल server पर"
+        ],
+        correctAnswerIndex: 1
+    },
+    {
+        question: "useMemo vs useCallback का मुख्य अंतर?",
+        options: [
+            "useMemo function लौटाता है, useCallback value",
+            "useMemo expensive computation का memoized value देता है; useCallback memoized function reference देता है",
+            "दोनों समान हैं",
+            "useCallback DOM node देता है"
+        ],
+        correctAnswerIndex: 1
+    },
+    {
+        question: "Higher-Order Components (HOCs) क्या हैं?",
+        options: [
+            "Components जो children render नहीं करते",
+            "एक function जो component लेता है और नया component लौटाता है जिससे cross-cutting concerns share हों",
+            "केवल hooks का दूसरा नाम",
+            "केवल test utilities"
+        ],
+        correctAnswerIndex: 1
+    },
+    {
+        question: "Forms हैंडल करने का सही तरीका?",
+        options: [
+            "Uncontrolled हमेशा बेहतर",
+            "Controlled inputs में value/onChange के साथ React state sync करना; जरूरत अनुसार uncontrolled+ref भी",
+            "सिर्फ window.prompt",
+            "HTML-only"
+        ],
+        correctAnswerIndex: 1
+    },
+    {
+        question: "Re-renders और performance optimization में कौन-सी strategy सही है?",
+        options: [
+            "setState को जितना हो सके बार-बार कॉल करें",
+            "State को co-locate करें, component boundaries सही रखें, memoization/useMemo/useCallback, React.memo, selective context, list virtualization",
+            "सबकुछ global state में रखें",
+            "Keys हटाएँ"
+        ],
+        correctAnswerIndex: 1
+    },
+    {
+        question: "Reconciliation क्या है?",
+        options: [
+            "Server से authentication करना",
+            "Virtual DOM trees के बीच differences निकालकर real DOM में minimal updates apply करने की प्रक्रिया",
+            "CSS compile करना",
+            "Build time optimization"
+        ],
+        correctAnswerIndex: 1
+    },
+    {
+        question: "Diffing algorithm किस धारणा पर आधारित है?",
+        options: [
+            "सभी nodes byte-by-byte compare होते हैं",
+            "Elements के type बदलने पर subtree remount; same type पर props/children diff; list में key से identity तय",
+            "DOM हमेशा full re-render होता है",
+            "Key optional है, कोई फर्क नहीं"
+        ],
+        correctAnswerIndex: 1
+    },
+    {
+        question: "React.lazy और Suspense का उपयोग?",
+        options: [
+            "Styling lazy-load करने के लिए",
+            "Code-splitting से components dynamically लोड करना; Suspense fallback दिखाता है",
+            "Server-only rendering",
+            "State persistence"
+        ],
+        correctAnswerIndex: 1
+    },
+    {
+        question: "Error boundaries क्या हैं?",
+        options: [
+            "CSS boundaries",
+            "Class components जो render/lifecycle में errors पकड़कर fallback UI दिखाते हैं; hooks से सीधे नहीं, लेकिन useErrorBoundary (कुछ libs) या component wrappers से संभव",
+            "try/catch in event handlers",
+            "Router guards"
+        ],
+        correctAnswerIndex: 1
+    },
+    {
+        question: "Auth और protected routes कैसे बनते हैं?",
+        options: [
+            "CSS से",
+            "Route guards द्वारा: auth state चेक करके unauthorized पर redirect/fallback; tokens/session validate; loader/actions या wrappers",
+            "केवल server पर",
+            "HTML meta tags से"
+        ],
+        correctAnswerIndex: 1
+    },
+    {
+        question: "Render props vs HOCs का सही अंतर?",
+        options: [
+            "Render props component को function-as-child से behavior share; HOC component को wrap करके props inject करता है",
+            "दोनों identical",
+            "Render props सिर्फ styling",
+            "HOC केवल class components"
+        ],
+        correctAnswerIndex: 0
+    },
+    {
+        question: "SSR vs CSR में क्या फर्क है?",
+        options: [
+            "SSR: HTML server पर render होकर भेजा जाता है; CSR: browser JS से render करता है",
+            "SSR तेज़ नहीं हो सकता",
+            "CSR SEO-friendly हमेशा",
+            "SSR में JS नहीं चलता"
+        ],
+        correctAnswerIndex: 0
+    },
+    {
+        question: "React Fiber और Concurrent Mode का उद्देश्य?",
+        options: [
+            "CSS grid बेहतर करना",
+            "Scheduling friendly architecture जिससे rendering को छोटे units में तोड़कर interruptible बनाया जाए; responsiveness और prioritization बेहतर",
+            "सिर्फ devtools",
+            "केवल server features"
+        ],
+        correctAnswerIndex: 1
+    },
+    {
+        question: "React component testing का अच्छा अभ्यास क्या है?",
+        options: [
+            "Implementation details पर assert करें",
+            "User-centric behavior पर test करें (React Testing Library), unit+integration mix, accessible queries, mock boundaries पर विचार",
+            "केवल snapshots",
+            "Tests की जरूरत नहीं"
+        ],
+        correctAnswerIndex: 1
+    }
+,
             {
         question: "6. यदि आप चाहते हैं कि mutation के बाद UI अपडेट तुरंत दिखे, तो React Query में आप क्या करेंगे?",
         options: [
