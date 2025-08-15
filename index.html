@@ -55,6 +55,76 @@ color: white;
         // Quiz questions and their details
         const questions = [
              {
+        question: "Next.js में route.js फाइल का उपयोग किस लिए होता है?",
+        options: [
+            "a) Styling करने के लिए",
+            "b) API routes की logic लिखने के लिए",
+            "c) Static assets serve करने के लिए",
+            "d) Third-party packages import करने के लिए"
+        ],
+        correctAnswerIndex: 1
+    },
+    {
+        question: "Next.js के किस version में route.js या route.ts फाइल को support किया गया है?",
+        options: [
+            "a) Next.js 10",
+            "b) Next.js 13 (App Router architecture)",
+            "c) Next.js 5",
+            "d) Next.js 17"
+        ],
+        correctAnswerIndex: 1
+    },
+    {
+        question: "route.js में export होने वाला default function किस purpose से इस्तेमाल होता है?",
+        options: [
+            "a) HTML parsing",
+            "b) Server-side request handling (HTTP method के हिसाब से)",
+            "c) Client-side rendering",
+            "d) CSS import"
+        ],
+        correctAnswerIndex: 1
+    },
+    {
+        question: "Next.js App Router में /api/example/route.js फाइल किस URL को मैप करेगी?",
+        options: [
+            "a) /api",
+            "b) /example/route",
+            "c) /api/example",
+            "d) /route"
+        ],
+        correctAnswerIndex: 2
+    },
+    {
+        question: "क्या हम route.js या route.ts में GET, POST, DELETE जैसी HTTP methods को define कर सकते हैं?",
+        options: [
+            "a) हाँ, हरेक method के लिए अलग-अलग export function",
+            "b) नहीं",
+            "c) सिर्फ GET allowed है",
+            "d) केवल HEAD और PATCH"
+        ],
+        correctAnswerIndex: 0
+    },
+    {
+        question: "route.js में request response के लिए किस object का उपयोग किया जाता है?",
+        options: [
+            "a) window",
+            "b) req, res (Node.js objects)",
+            "c) NextRequest और NextResponse",
+            "d) document"
+        ],
+        correctAnswerIndex: 2
+    },
+    {
+        question: "Next.js के route.js में API route बनाने के लिए कोनसा default export जरूरी है?",
+        options: [
+            "a) class",
+            "b) array",
+            "c) function",
+            "d) number"
+        ],
+        correctAnswerIndex: 2
+    },
+             {
         question: "React Query के useMutation hook में .mutate method का क्या काम है?",
         options: [
             "a) Data fetch करना",
